@@ -27,6 +27,20 @@ add_executable("${PROJECT_NAME}" main.cpp
 				inc/Walls.h
 		
 )
+
+target_link_libraries("${PROJECT_NAME}" 
+					    debug sfml-graphics-s-d 
+						debug sfml-window-s-d
+						debug sfml-system-s-d
+						debug sfml-audio-s-d)
+						
+target_link_libraries("${PROJECT_NAME}" 
+					    optimized sfml-graphics-s 
+						optimized sfml-window-s
+						optimized sfml-system-s
+						optimized sfml-audio-s)
+	
+
 											
 target_link_libraries("${PROJECT_NAME}" sfml-graphics-s-d
 						  sfml-window-s-d
