@@ -4,6 +4,7 @@
 #include <Walls.h>
 #include <string>
 #include <iostream>
+#include <vector>
 
 namespace mt
 {
@@ -45,10 +46,6 @@ namespace mt
 		player.SetAngle(angle);
 		player.UpdateVelocity();
 
-		mt::Wall Floor({ 100, 700 }, 1000, 50);
-		mt::Wall WallLeft({ 100, 100 }, 50, 600);
-		mt::Wall WallRight({ 1050, 100 }, 50, 600);
-
 		sf::Clock timer;
 
 		double t = 0;
@@ -63,15 +60,19 @@ namespace mt
 			}
 
 			sf::Time dt = timer.restart();
-			t = dt.asMicroseconds() / 1e6;
+			t = dt.asMicroseconds() / 1e6 * 4;
 
 			player.Move(t);
 
 			m_window->clear();
 			m_window->draw(*player.Get());
-			m_window->draw(*Floor.Get());
-			m_window->draw(*WallLeft.Get());
-			m_window->draw(*WallRight.Get());
+
+            for (auto & wall : mt::walls)
+            {
+                m_window->draw(*wall->Get());
+            }
+            m_window->draw(*mt::Floor->Get());
+
 			m_window->display();
 
 		}

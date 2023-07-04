@@ -15,6 +15,11 @@ int main()
     game.set_resolution(1200, 800);
     game.setup();
     game.Run();
+
+    for (int i = 0; i < mt::walls.size(); i++)
+        delete mt::walls[i];
+
+    delete mt::Floor;
     
     return 0;
 }

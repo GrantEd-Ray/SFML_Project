@@ -24,6 +24,7 @@ namespace mt
 		float m_alpha;
 		float m_r;
 		sf::CircleShape* m_ball;
+        sf::FloatRect bound;
 
 	public:
 		Player(Point p0, float r)
@@ -33,6 +34,7 @@ namespace mt
 			m_ball = new sf::CircleShape(m_r);
 			m_ball->setFillColor(sf::Color::Green);
 			m_ball->setOrigin(m_r, m_r);
+            bound = m_ball->getGlobalBounds();
 		}
 		~Player()
 		{

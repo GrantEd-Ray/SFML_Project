@@ -17,5 +17,6 @@ namespace mt
 		float x = m_p.x;
 		float y = m_p.y;
 		m_rect->setPosition(x, y);
+        bound = m_rect->getGlobalBounds();
 	}
 }

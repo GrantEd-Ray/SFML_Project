@@ -1,3 +1,3 @@
 # sfml_sample  
-Системные требования: Windows 10
+Шаблон подключения библиотеки SFML для Visual Studio 2019  
 
